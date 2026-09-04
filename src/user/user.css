@@ -1,0 +1,760 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  box-sizing:border-box;
+}
+
+
+body{
+
+  margin:0;
+
+  font-family:"Georgia", serif;
+
+  background:#F8FAFC;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+
+.user-container{
+
+  display:flex;
+
+}
+
+
+
+.user-main{
+
+  margin-left:260px;
+
+  width:calc(100% - 260px);
+
+}
+
+
+
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+
+.user-sidebar{
+
+  width:260px;
+
+  height:100vh;
+
+  position:fixed;
+
+  left:0;
+
+  top:0;
+
+  background:#0F172A;
+
+  color:white;
+
+  padding:25px 15px;
+
+  display:flex;
+
+  flex-direction:column;
+
+}
+
+
+
+.user-sidebar h2{
+
+  text-align:center;
+
+  color:#C89B4A;
+
+  font-size:28px;
+
+  margin-bottom:45px;
+
+}
+
+
+
+
+.sidebar-link{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  width:100%;
+
+  background:none;
+
+  border:none;
+
+  color:#E5E7EB;
+
+  padding:14px;
+
+  margin-bottom:12px;
+
+  border-radius:10px;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  text-align:left;
+
+  transition:.3s;
+
+}
+
+
+
+.sidebar-link:hover{
+
+  background:#C89B4A;
+
+  color:white;
+
+}
+
+
+
+
+.logout:hover{
+
+  background:#B91C1C;
+
+}
+
+
+
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+
+.user-navbar{
+
+  position:fixed;
+
+  top:0;
+
+  right:0;
+
+  height:70px;
+
+  width:calc(100% - 260px);
+
+  background:white;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  padding:0 35px;
+
+  box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+  z-index:1000;
+
+}
+
+
+
+.user-navbar h3{
+
+  color:#0F172A;
+
+  font-size:24px;
+
+}
+
+
+
+
+.user-actions{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:25px;
+
+}
+
+
+
+.user-info p{
+
+  margin:0;
+
+  font-weight:bold;
+
+  color:#0F172A;
+
+}
+
+
+
+.user-info small{
+
+  color:#64748B;
+
+}
+
+
+
+
+
+/* =========================
+   CONTENT
+========================= */
+
+
+.user-content{
+
+  padding:100px 35px 35px;
+
+  min-height:100vh;
+
+}
+
+
+
+
+
+.dashboard-header h1{
+
+  font-size:34px;
+
+  color:#0F172A;
+
+}
+
+
+
+.dashboard-header p{
+
+  color:#64748B;
+
+}
+
+
+
+
+
+/* =========================
+   STAT CARD
+========================= */
+
+
+.stats-container{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:20px;
+
+  margin-top:30px;
+
+}
+
+
+
+
+
+.stat-card{
+
+  background:white;
+
+  padding:25px;
+
+  border-radius:15px;
+
+  border-left:5px solid #C89B4A;
+
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+.stat-card h3{
+
+  color:#64748B;
+
+  font-size:16px;
+
+}
+
+
+
+.stat-card p{
+
+  color:#0F172A;
+
+  font-size:30px;
+
+  font-weight:bold;
+
+}
+
+
+
+
+
+/* =========================
+   RESERVATIONS
+========================= */
+
+
+.reservation-list{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:25px;
+
+}
+
+
+
+
+
+.reservation-card{
+
+  background:white;
+
+  padding:25px;
+
+  border-radius:18px;
+
+  border-left:5px solid #C89B4A;
+
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+
+
+.reservation-card h2{
+
+  color:#0F172A;
+
+}
+
+
+
+
+
+.reservation-info p{
+
+  color:#475569;
+
+}
+
+
+
+
+
+.status{
+
+  background:#C89B4A;
+
+  color:white;
+
+  padding:7px 15px;
+
+  border-radius:20px;
+
+  margin-left:10px;
+
+  font-size:13px;
+
+}
+
+
+
+
+
+.details-btn,
+.save-btn{
+
+  background:#0F172A;
+
+  color:white;
+
+  border:none;
+
+  padding:12px 22px;
+
+  border-radius:10px;
+
+  cursor:pointer;
+
+  margin-top:15px;
+
+}
+
+
+
+.details-btn:hover,
+.save-btn:hover{
+
+  background:#C89B4A;
+
+}
+
+
+
+
+
+/* =========================
+   TABLES
+========================= */
+
+
+.payments-page table{
+
+  width:100%;
+
+  background:white;
+
+  border-collapse:collapse;
+
+  border-radius:15px;
+
+  overflow:hidden;
+
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+.payments-page th{
+
+  background:#0F172A;
+
+  color:white;
+
+  padding:15px;
+
+  text-align:left;
+
+}
+
+
+
+.payments-page td{
+
+  padding:15px;
+
+  border-bottom:1px solid #E5E7EB;
+
+  color:#475569;
+
+}
+
+
+
+
+
+/* =========================
+   PROFILE FORM
+========================= */
+
+
+.profile-form,
+.add-review{
+
+  background:white;
+
+  width:600px;
+
+  padding:30px;
+
+  border-radius:18px;
+
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+.profile-form label,
+.add-review label{
+
+  display:block;
+
+  margin-bottom:8px;
+
+  color:#0F172A;
+
+  font-weight:bold;
+
+}
+
+
+
+.profile-form input,
+.add-review input,
+.add-review textarea,
+.add-review select{
+
+
+  width:100%;
+
+  padding:12px;
+
+  margin-bottom:20px;
+
+  border:1px solid #E5E7EB;
+
+  border-radius:10px;
+
+}
+
+
+
+
+
+/* =========================
+   REVIEWS
+========================= */
+
+
+.review-card{
+
+  background:white;
+
+  padding:20px;
+
+  margin-top:20px;
+
+  border-radius:15px;
+
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+
+
+/* =========================
+   NOTIFICATIONS
+========================= */
+
+
+.notification-container{
+
+  position:relative;
+
+}
+
+
+
+.notification-btn{
+
+  border:none;
+
+  background:none;
+
+  font-size:24px;
+
+  cursor:pointer;
+
+}
+
+
+
+.notification-count{
+
+  position:absolute;
+
+  top:-8px;
+
+  right:-8px;
+
+  background:#C89B4A;
+
+  color:white;
+
+  width:20px;
+
+  height:20px;
+
+  border-radius:50%;
+
+  font-size:12px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+}
+
+
+
+
+
+.notification-dropdown{
+
+  position:absolute;
+
+  right:0;
+
+  top:40px;
+
+  width:320px;
+
+  background:white;
+
+  border-radius:15px;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+
+
+
+
+.notification-item{
+
+  padding:15px;
+
+  border-bottom:1px solid #E5E7EB;
+
+}
+
+
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+@media(max-width:900px){
+
+
+.user-sidebar{
+
+  width:80px;
+
+}
+
+
+.user-main{
+
+  margin-left:80px;
+
+}
+
+
+.user-navbar{
+
+  width:calc(100% - 80px);
+
+}
+
+
+.stats-container{
+
+  grid-template-columns:1fr;
+
+}
+
+
+.reservation-list{
+
+  grid-template-columns:1fr;
+
+}
+
+
+.profile-form,
+.add-review{
+
+  width:100%;
+
+}
+
+
+}
+
+.rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0 8px;
+}
+
+.rating-stars .star {
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+
+  font-size: 28px;
+  line-height: 1;
+
+  color: #d6d6d6;
+  cursor: pointer;
+
+  transition: 
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.rating-stars .star:hover {
+  color: #c89b4a;
+  transform: scale(1.15);
+}
+
+.rating-stars .star.active {
+  color: #c89b4a;
+}
+
+.rating-stars .star:focus {
+  outline: none;
+}
+
+.rating-value {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #777;
+}
+.sidebar-logo {
+    text-decoration: none;
+    color: inherit;
+}

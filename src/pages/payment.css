@@ -1,0 +1,843 @@
+/* ===========================
+   PAYMENT PAGE
+=========================== */
+
+.payment-container{
+    background:#f5f7fb;
+    padding:60px 20px;
+    min-height:100vh;
+}
+
+.payment-card{
+    max-width:1300px;
+    margin:auto;
+    background:#fff;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+}
+
+.payment-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+/* ===========================
+   LEFT
+=========================== */
+
+.payment-left{
+    background:#fafbfd;
+    padding:50px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border-right:1px solid #ececec;
+}
+
+/* ================= CARD DESIGN ================= */
+
+
+.payment-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* 3D CARD — proportions rapprochées d'une vraie carte bancaire (ISO 7810) */
+
+.bank-card {
+
+  width: 380px;
+  height: 239px;
+
+  position: relative;
+
+  perspective: 1400px;
+
+  margin-bottom: 35px;
+
+}
+
+
+
+.bank-card.flip .card-front {
+
+  transform: rotateY(180deg);
+
+}
+
+
+
+.bank-card.flip .card-back {
+
+  transform: rotateY(360deg);
+
+}
+
+
+
+
+
+.card-front,
+.card-back {
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 18px;
+
+  padding: 24px 26px;
+
+  box-sizing: border-box;
+
+  color: white;
+
+  overflow: hidden;
+
+  backface-visibility: hidden;
+
+  transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #16213c 45%,
+    #C89B4A 100%
+  );
+
+  box-shadow:
+    0 18px 40px rgba(15,23,42,0.35),
+    0 2px 0 rgba(255,255,255,0.06) inset;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+
+.card-front {
+
+  transform: rotateY(0deg);
+
+}
+
+
+
+
+
+.card-back {
+
+  transform: rotateY(180deg);
+
+  padding: 0;
+  justify-content: flex-start;
+
+}
+
+
+
+/* Fine top-sheen so the card reads as glossy plastic, not flat color */
+
+.card-front::after,
+.card-back::after{
+
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    120deg,
+    rgba(255,255,255,0.14) 0%,
+    rgba(255,255,255,0) 28%
+  );
+  pointer-events:none;
+
+}
+
+
+
+
+/* Filigrane "HOTELIA PAY" répété en fond de carte */
+
+.card-watermark{
+
+  position:absolute;
+  top:0;
+  left:0;
+  width:220%;
+  height:220%;
+
+  color:rgba(255,255,255,0.06);
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:4px;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:26px 18px;
+
+  transform:rotate(-22deg) translate(-25%,-30%);
+
+  pointer-events:none;
+  user-select:none;
+  white-space:nowrap;
+
+}
+
+.card-watermark--back{
+  color:rgba(15,23,42,0.05);
+}
+
+
+
+/* Motif guilloché discret, comme une trame de sécurité imprimée */
+
+.card-guilloche{
+
+  position:absolute;
+  inset:0;
+
+  background-image:
+    repeating-linear-gradient(
+      115deg,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+
+  mix-blend-mode:overlay;
+  pointer-events:none;
+
+}
+
+
+
+
+
+/* HEADER */
+
+.card-header {
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  position:relative;
+  z-index:1;
+
+}
+
+
+
+.card-brand-lockup{
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+}
+
+
+
+.hotelia-monogram{
+
+  width:30px;
+  height:30px;
+  border-radius:8px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-family:Georgia, 'Times New Roman', serif;
+  font-weight:700;
+  font-size:16px;
+  color:#0f172a;
+
+  background:linear-gradient(135deg,#f3d9a4,#C89B4A);
+  box-shadow:0 2px 6px rgba(0,0,0,0.25);
+
+}
+
+
+
+.card-issuer{
+
+  display:flex;
+  flex-direction:column;
+  line-height:1.15;
+
+}
+
+
+
+.card-issuer strong{
+
+  font-size:15px;
+  letter-spacing:2.5px;
+  color:white;
+
+}
+
+
+
+.card-issuer small{
+
+  font-size:8.5px;
+  letter-spacing:0.5px;
+  color:rgba(255,255,255,0.7);
+  text-transform:uppercase;
+
+}
+
+
+
+.contactless-icon{
+
+  width:26px;
+  height:26px;
+  color:rgba(255,255,255,0.85);
+  transform:rotate(90deg);
+  flex-shrink:0;
+
+}
+
+
+
+
+
+/* CHIP */
+
+.chip-wrapper{
+
+  margin-top:18px;
+  position:relative;
+  z-index:1;
+
+}
+
+
+
+.chip {
+
+  width:46px;
+  height:35px;
+
+  border-radius:7px;
+
+  background:linear-gradient(
+    155deg,
+    #f6e6bd,
+    #d9b568 45%,
+    #a97f37
+  );
+
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.4);
+
+  position:relative;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+
+}
+
+
+/* Lignes gravées façon puce EMV */
+
+.chip span{
+  border:1px solid rgba(120,88,30,0.55);
+}
+
+.chip span:nth-child(1){ border-right:none; border-bottom:none; border-radius:7px 0 0 0; }
+.chip span:nth-child(2){ border-left:none; border-bottom:none; border-radius:0 7px 0 0; }
+.chip span:nth-child(3){ border-right:none; border-top:none; border-radius:0 0 0 7px; }
+.chip span:nth-child(4){ border-left:none; border-top:none; border-radius:0 0 7px 0; }
+
+
+
+
+
+/* NUMBER */
+
+
+.card-number-preview {
+
+  margin-top:22px;
+
+  font-size:21px;
+
+  letter-spacing:3px;
+
+  font-family:'Courier New', monospace;
+  font-weight:600;
+
+  text-shadow:0 1px 1px rgba(0,0,0,0.25);
+
+  position:relative;
+  z-index:1;
+
+}
+
+
+
+
+
+.card-footer {
+
+  display:flex;
+  justify-content:space-between;
+
+  margin-top:auto;
+
+  align-items:flex-end;
+
+  position:relative;
+  z-index:1;
+
+}
+
+
+.card-footer div {
+
+  display:flex;
+  flex-direction:column;
+
+}
+
+
+.card-footer small {
+
+  font-size:9px;
+  letter-spacing:1px;
+  opacity:0.7;
+  color:white;
+
+}
+
+
+.card-footer p {
+
+  margin:5px 0 0;
+
+  color:white;
+
+  font-size:14px;
+
+  font-weight:600;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  max-width:150px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+}
+
+
+
+/* NETWORK MARK — VISA / Mastercard / Amex */
+
+.card-network{
+
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+
+}
+
+
+
+.visa-wordmark{
+
+  font-family:Georgia, 'Times New Roman', serif;
+  font-style:italic;
+  font-weight:700;
+  font-size:24px;
+  letter-spacing:1px;
+  color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,0.35);
+
+}
+
+
+.visa-wordmark--back{
+  font-size:15px;
+}
+
+
+
+.mastercard-mark{
+
+  display:flex;
+
+}
+
+
+.mastercard-mark i{
+
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  display:inline-block;
+
+}
+
+
+.mastercard-mark i:first-child{
+  background:#EB001B;
+  opacity:0.9;
+  margin-right:-9px;
+}
+
+
+.mastercard-mark i:last-child{
+  background:#F79E1B;
+  opacity:0.9;
+}
+
+
+
+.amex-wordmark{
+
+  font-family:Arial, sans-serif;
+  font-weight:700;
+  font-size:15px;
+  letter-spacing:1.5px;
+  background:rgba(255,255,255,0.15);
+  padding:4px 8px;
+  border-radius:4px;
+
+}
+
+
+
+
+/* BACK CARD */
+
+
+.black-line {
+
+  height:42px;
+
+  background:#000;
+
+  margin-top:22px;
+
+  position:relative;
+  z-index:1;
+
+}
+
+
+
+
+.white-strip {
+
+  background:#eceff3;
+
+  min-height:42px;
+
+  margin:18px 22px 0;
+  border-radius:4px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  padding:0 16px;
+
+  position:relative;
+  z-index:1;
+
+}
+
+
+
+.signature-note{
+
+  margin:0;
+  font-size:8px;
+  font-style:italic;
+  color:#888;
+  line-height:1.3;
+  max-width:60%;
+
+}
+
+
+
+
+.cvv-box {
+
+  background:#fff;
+
+  color:#111;
+
+  padding:7px 16px;
+
+  border-radius:4px;
+
+  font-weight:bold;
+
+  letter-spacing:3px;
+
+  box-shadow:inset 0 0 0 1px #ccc;
+
+}
+
+
+
+.card-back-footer{
+
+  margin-top:auto;
+  padding:0 22px 18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  position:relative;
+  z-index:1;
+
+}
+
+
+
+
+.back-text {
+
+  margin:0;
+
+  font-size:9px;
+  letter-spacing:1px;
+  color:rgba(255,255,255,0.75);
+
+}
+
+
+/* ===========================
+   SUMMARY
+=========================== */
+
+.payment-summary{
+    width:100%;
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.payment-summary img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.payment-summary h3{
+    margin-top:18px;
+    color:#1b263b;
+}
+
+.payment-summary p{
+    margin:10px 0;
+    color:#666;
+}
+
+.payment-summary hr{
+    margin:20px 0;
+}
+
+.summary-total{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:22px;
+    font-weight:bold;
+    color:#1b263b;
+}
+
+/* ===========================
+   RIGHT
+=========================== */
+
+.payment-form{
+    padding:60px;
+    display:flex;
+    flex-direction:column;
+}
+
+.payment-form h2{
+    font-size:35px;
+    color:#1b263b;
+}
+
+.subtitle{
+    margin-top:10px;
+    color:#888;
+    margin-bottom:30px;
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:22px;
+}
+
+.input-group label{
+    margin-bottom:8px;
+    font-weight:600;
+    color:#555;
+}
+
+.input-group input{
+    height:58px;
+    border:2px solid #ececec;
+    border-radius:15px;
+    padding:0 18px;
+    font-size:17px;
+    transition:.3s;
+}
+
+.input-group input:focus{
+    outline:none;
+    border-color:#C89B4A;
+    box-shadow:0 0 0 3px rgba(200,155,74,.15);
+}
+
+.payment-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* ===========================
+   AMOUNT
+=========================== */
+
+.amount-box{
+    margin-top:10px;
+    padding:22px;
+    border:2px dashed #ddd;
+    border-radius:18px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+.amount-box strong{
+    color:#C89B4A;
+    font-size:28px;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.pay-btn{
+    width:100%;
+    height:60px;
+    border:none;
+    border-radius:16px;
+
+    background:linear-gradient(
+        90deg,
+        #1b263b,
+        #C89B4A
+    );
+
+    color:white;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.pay-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1000px){
+
+    .payment-content{
+        grid-template-columns:1fr;
+    }
+
+    .payment-left{
+        border-right:none;
+        border-bottom:1px solid #eee;
+    }
+
+    .bank-card{
+        width:100%;
+        max-width:420px;
+        height:264px;
+    }
+
+    .payment-form{
+        padding:35px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .payment-row{
+        grid-template-columns:1fr;
+    }
+
+    .payment-left{
+        padding:25px;
+    }
+
+    .payment-form{
+        padding:25px;
+    }
+
+    .bank-card{
+        height:auto;
+        aspect-ratio:1.586;
+    }
+
+    .card-number-preview{
+        font-size:18px;
+        letter-spacing:2px;
+    }
+
+    .payment-form h2{
+        font-size:28px;
+    }
+
+}

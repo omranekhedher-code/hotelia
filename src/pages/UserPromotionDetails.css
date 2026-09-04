@@ -1,0 +1,405 @@
+/* =====================================================
+   PROMOTION DETAILS PAGE
+===================================================== */
+
+.promotion-details-page {
+  min-height: 100vh;
+  padding: clamp(32px, 6vw, 50px) clamp(16px, 4vw, 40px) 80px;
+
+  background: #f8f7f4;
+
+  box-sizing: border-box;
+}
+
+.promotion-details-container {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.promotion-back-btn {
+  margin-bottom: 25px;
+
+  padding: 11px 18px;
+
+  border: 1px solid #dddddd;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #172033;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.promotion-back-btn:hover {
+  background: #172033;
+  color: #ffffff;
+
+  border-color: #172033;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.promotion-details-card {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.promotion-details-image {
+  position: relative;
+
+  min-height: 500px;
+
+  overflow: hidden;
+
+  background: #172033;
+}
+
+.promotion-details-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.promotion-details-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+
+/* =====================================================
+   DISCOUNT
+===================================================== */
+
+.promotion-details-discount {
+  position: absolute;
+
+  top: 25px;
+  right: 25px;
+
+  padding: 10px 16px;
+
+  background: #c89b4a;
+  color: #ffffff;
+
+  border-radius: 25px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.promotion-details-content {
+  padding: clamp(28px, 5vw, 55px) clamp(22px, 4vw, 50px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.promotion-details-label {
+  margin-bottom: 12px;
+
+  color: #c89b4a;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.promotion-details-content h1 {
+  margin: 0 0 18px;
+
+  color: #172033;
+
+  font-size: 38px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.promotion-details-description {
+  margin: 0 0 30px;
+
+  color: #777777;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   ROOM
+===================================================== */
+
+.promotion-details-room {
+  padding: 18px 20px;
+
+  margin-bottom: 25px;
+
+  background: #faf9f6;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 12px;
+}
+
+.promotion-details-room h3 {
+  margin: 0 0 10px;
+
+  color: #172033;
+
+  font-size: 16px;
+}
+
+.promotion-details-room p {
+  margin: 5px 0;
+
+  color: #777777;
+
+  font-size: 14px;
+}
+
+.promotion-details-room strong {
+  color: #172033;
+}
+
+
+/* =====================================================
+   PRICE
+===================================================== */
+
+.promotion-details-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+
+  margin-bottom: 30px;
+}
+
+.promotion-details-price strong {
+  color: #c89b4a;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.promotion-details-price > span:last-child {
+  color: #777777;
+
+  font-size: 13px;
+}
+
+.promotion-old-price {
+  color: #999999 !important;
+
+  font-size: 16px;
+
+  text-decoration: line-through;
+}
+
+
+/* =====================================================
+   RESERVE BUTTON
+===================================================== */
+
+.promotion-reserve-btn {
+  width: 100%;
+
+  padding: 15px 22px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #172033;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.promotion-reserve-btn:hover {
+  background: #c89b4a;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(200, 155, 74, 0.25);
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.promotion-details-loading {
+  min-height: 70vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #777777;
+
+  font-size: 15px;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.promotion-details-error {
+  max-width: 600px;
+
+  margin: 100px auto;
+
+  padding: 40px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+.promotion-details-error h2 {
+  margin: 0 0 12px;
+
+  color: #172033;
+}
+
+.promotion-details-error p {
+  margin: 0 0 25px;
+
+  color: #777777;
+}
+
+.promotion-details-error button {
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #172033;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 850px) {
+
+  .promotion-details-page {
+    padding: 35px 25px 60px;
+  }
+
+  .promotion-details-card {
+    grid-template-columns: 1fr;
+  }
+
+  .promotion-details-image {
+    min-height: 350px;
+  }
+
+  .promotion-details-content {
+    padding: 40px 35px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .promotion-details-page {
+    padding: 25px 15px 50px;
+  }
+
+  .promotion-details-image {
+    min-height: 280px;
+  }
+
+  .promotion-details-content {
+    padding: 30px 22px;
+  }
+
+  .promotion-details-content h1 {
+    font-size: 29px;
+  }
+
+  .promotion-details-description {
+    font-size: 14px;
+  }
+
+  .promotion-details-price strong {
+    font-size: 25px;
+  }
+
+}

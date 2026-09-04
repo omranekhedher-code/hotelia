@@ -1,0 +1,632 @@
+
+/* =====================================================
+   ROOM DETAIL
+===================================================== */
+
+.room-detail {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+
+  box-sizing: border-box;
+
+  padding: clamp(88px, 10vw, 105px) clamp(16px, 4vw, 25px) 55px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(200, 155, 74, 0.08),
+      transparent 35%
+    ),
+    #f8f7f3;
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.room-detail-image {
+  position: relative;
+
+  width: 100%;
+  height: clamp(290px, 42vw, 600px);
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: #e8e5df;
+
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.14),
+    0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.room-detail-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 50%
+    );
+}
+
+.room-detail-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.6s ease,
+    filter 0.4s ease;
+}
+
+.room-detail-image:hover img {
+  transform: scale(1.035);
+
+  filter: brightness(1.03);
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.room-detail-content {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 20px 35px;
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.room-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  padding: 8px 17px;
+
+  margin-bottom: 8px;
+
+  border-radius: 999px;
+
+  background: rgba(200, 155, 74, 0.12);
+
+  border: 1px solid rgba(200, 155, 74, 0.25);
+
+  color: #98702d;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.room-detail-content h1 {
+  margin: 12px 0 18px;
+
+  color: #0f172a;
+
+  font-size: clamp(38px, 4vw, 58px);
+
+  line-height: 1.05;
+
+  font-weight: 700;
+
+  letter-spacing: -0.035em;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.room-description {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   INFO CARDS
+===================================================== */
+
+.room-info {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 15px;
+
+  margin: 30px 0;
+}
+
+.info-card {
+  padding: 20px 22px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid rgba(15, 23, 42, 0.07);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 30px rgba(15, 23, 42, 0.1);
+}
+
+.info-card h3 {
+  margin: 0 0 8px;
+
+  color: #a17a35;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+}
+
+.info-card p {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.room-services {
+  margin-top: 5px;
+}
+
+.room-services h2 {
+  margin: 0 0 15px;
+
+  color: #0f172a;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+.services-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.services-list span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 15px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(200, 155, 74, 0.2);
+
+  color: #475569;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  box-shadow:
+    0 5px 15px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.services-list span:hover {
+  transform: translateY(-2px);
+
+  background: #fffaf1;
+
+  border-color: rgba(200, 155, 74, 0.45);
+
+  color: #8f692b;
+}
+
+
+/* =====================================================
+   CHECK ICON
+===================================================== */
+
+.service-check {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: rgba(200, 155, 74, 0.15);
+
+  color: #a17a35;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   NO SERVICES
+===================================================== */
+
+.no-services {
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  font-style: italic;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.room-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 35px;
+}
+
+
+/* =====================================================
+   RESERVE BUTTON
+===================================================== */
+
+.reserve-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding: 0 30px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c89b4a,
+      #e0b968
+    );
+
+  color: #ffffff;
+
+  border: none;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 12px 28px rgba(200, 155, 74, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.reserve-btn:hover {
+  transform: translateY(-3px);
+
+  filter: brightness(1.05);
+
+  box-shadow:
+    0 17px 35px rgba(200, 155, 74, 0.35);
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding: 0 26px;
+
+  border-radius: 999px;
+
+  background: #0f172a;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-3px);
+
+  background: #1e293b;
+
+  box-shadow:
+    0 12px 25px rgba(15, 23, 42, 0.18);
+}
+
+
+/* =====================================================
+   LOADING / NOT FOUND
+===================================================== */
+
+.room-not-found {
+  min-height: 70vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 40px;
+
+  background: #f8f7f3;
+
+  text-align: center;
+}
+
+.room-not-found h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 30px;
+}
+
+.room-not-found a {
+  padding: 12px 25px;
+
+  border-radius: 999px;
+
+  background: #c89b4a;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.25s ease;
+}
+
+.room-not-found a:hover {
+  background: #a97d32;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+  .room-detail {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    padding: 100px 20px 45px;
+  }
+
+  .room-detail-content {
+    padding: 15px 20px;
+  }
+
+  .room-detail-image {
+    height: 520px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .room-detail {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+
+    padding: 95px 18px 45px;
+
+    min-height: auto;
+  }
+
+  .room-detail-image {
+    height: 360px;
+
+    border-radius: 20px;
+  }
+
+  .room-detail-content {
+    padding: 0;
+  }
+
+  .room-detail-content h1 {
+    font-size: 38px;
+
+    margin: 12px 0 15px;
+  }
+
+  .room-description {
+    font-size: 15px;
+
+    line-height: 1.75;
+  }
+
+  .room-info {
+    grid-template-columns: 1fr;
+
+    margin: 25px 0;
+  }
+
+  .room-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    margin-top: 30px;
+  }
+
+  .reserve-btn,
+  .back-btn {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .room-detail {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .room-detail-image {
+    height: 290px;
+
+    border-radius: 18px;
+  }
+
+  .room-detail-content h1 {
+    font-size: 32px;
+  }
+
+  .room-badge {
+    font-size: 10px;
+
+    padding: 7px 13px;
+  }
+
+  .services-list {
+    gap: 8px;
+  }
+
+  .services-list span {
+    font-size: 13px;
+
+    padding: 9px 12px;
+  }
+
+}

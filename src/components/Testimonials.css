@@ -1,0 +1,382 @@
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+
+.testimonials {
+    padding: 100px 5%;
+    background:
+        linear-gradient(
+            180deg,
+            #fcfbf8 0%,
+            #f8f4ec 100%
+        );
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.testimonials-title {
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.testimonials-title h2 {
+    margin: 0 0 14px;
+
+    color: var(--primary, #172033);
+
+    font-size: clamp(
+        28px,
+        4vw,
+        42px
+    );
+
+    font-weight: 700;
+
+    letter-spacing: -0.02em;
+}
+
+.testimonials-title p {
+    margin: 0;
+
+    color: var(--muted, #777);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   REVIEWS GRID
+===================================================== */
+
+.reviews {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 26px;
+}
+
+
+/* =====================================================
+   REVIEW CARD
+===================================================== */
+
+.review-card {
+    position: relative;
+
+    padding: 35px 28px 32px;
+
+    background: var(
+        --surface,
+        #ffffff
+    );
+
+    border-radius: 20px;
+
+    border: 1px solid
+        var(
+            --border,
+            #e8e2d8
+        );
+
+    box-shadow:
+        0 12px 35px
+        rgba(11, 11, 11, 0.06);
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* petit effet doré en haut */
+
+.review-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 55px;
+    height: 3px;
+
+    background:
+        var(
+            --accent,
+            #c9a96e
+        );
+
+    border-radius: 0 0 10px 10px;
+}
+
+
+.review-card:hover {
+    transform: translateY(-9px);
+
+    box-shadow:
+        0 22px 50px
+        rgba(11, 11, 11, 0.11);
+
+    border-color:
+        rgba(201, 169, 110, 0.45);
+}
+
+
+/* =====================================================
+   USER AVATAR
+===================================================== */
+
+.review-avatar {
+    width: 78px;
+    height: 78px;
+
+    margin: 0 auto 17px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c9a96e,
+            #e6c98e
+        );
+
+    color: #172033;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    box-shadow:
+        0 8px 22px
+        rgba(201, 169, 110, 0.25);
+
+    border: 4px solid #fff;
+}
+
+
+/* =====================================================
+   USER NAME
+===================================================== */
+
+.review-card h3 {
+    margin: 0 0 10px;
+
+    color:
+        var(
+            --primary,
+            #172033
+        );
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   RATING
+===================================================== */
+
+.rating {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 3px;
+
+    margin-bottom: 17px;
+}
+
+
+/* chaque étoile */
+
+.star {
+    display: inline-block;
+
+    font-size: 19px;
+
+    color: #ddd;
+
+    line-height: 1;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* étoile active */
+
+.star.active {
+    color:
+        var(
+            --accent,
+            #c9a96e
+        );
+
+    text-shadow:
+        0 2px 8px
+        rgba(201, 169, 110, 0.25);
+}
+
+
+/* petit effet */
+
+.review-card:hover .star.active {
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   COMMENT
+===================================================== */
+
+.review-card p {
+    margin: 0;
+
+    color:
+        var(
+            --muted,
+            #777
+        );
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.reviews-loading {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color:
+        var(
+            --muted,
+            #777
+        );
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.reviews-empty {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    border: 1px solid
+        var(
+            --border,
+            #e8e2d8
+        );
+}
+
+.reviews-empty p {
+    margin: 0;
+
+    color:
+        var(
+            --muted,
+            #777
+        );
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .reviews {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .testimonials {
+        padding: 75px 5%;
+    }
+
+
+    .testimonials-title {
+        margin-bottom: 40px;
+    }
+
+
+    .testimonials-title h2 {
+        font-size: 29px;
+    }
+
+
+    .reviews {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .review-card {
+        padding:
+            32px 24px;
+    }
+
+}

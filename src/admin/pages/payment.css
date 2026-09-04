@@ -1,0 +1,884 @@
+/* =========================================================
+   PAYMENT DETAILS - HOTELIA
+========================================================= */
+
+
+/* =========================================================
+   RESET LOCAL
+========================================================= */
+
+.payment-details-page {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background: #f7f8fa;
+
+    color: #1d2433;
+
+    box-sizing: border-box;
+}
+
+.payment-details-page *,
+.payment-details-page *::before,
+.payment-details-page *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.payment-details-main {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 50px 20px 70px;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.payment-details-container {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.payment-details-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+
+    padding: 0 5px;
+}
+
+
+.payment-header-content {
+    flex: 1;
+}
+
+
+.payment-header-label {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #c89b4a;
+}
+
+
+.payment-header-content h1 {
+    margin: 0 0 10px;
+
+    font-size: 36px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+
+.payment-header-content p {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: #7a8291;
+}
+
+
+/* =========================================================
+   PAYMENT HEADER ID
+========================================================= */
+
+.payment-header-id {
+    min-width: 130px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    padding: 16px 20px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e9ebef;
+
+    box-shadow: 0 5px 20px rgba(20, 30, 50, 0.05);
+}
+
+
+.payment-header-id span {
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #9aa1ad;
+}
+
+
+.payment-header-id strong {
+    margin-top: 5px;
+
+    font-size: 20px;
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.payment-details-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e7e9ed;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 35px rgba(25, 35, 55, 0.07);
+}
+
+
+/* =========================================================
+   PAYMENT CARD HEADER
+========================================================= */
+
+.payment-card-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 28px 35px;
+
+    border-bottom: 1px solid #edf0f3;
+
+    background: #ffffff;
+}
+
+
+.payment-card-label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #9aa1ad;
+}
+
+
+.payment-card-header h2 {
+    margin: 0;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.payment-detail-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+
+/* PAID */
+
+.payment-detail-status.paid,
+.payment-mini-status.paid {
+    color: #217a4b;
+    background: #eaf7ef;
+}
+
+.payment-detail-status.paid .status-dot {
+    background: #2fa866;
+}
+
+
+/* PENDING */
+
+.payment-detail-status.pending,
+.payment-mini-status.pending {
+    color: #9a6815;
+    background: #fff5df;
+}
+
+.payment-detail-status.pending .status-dot {
+    background: #d89b2b;
+}
+
+
+/* REFUNDED */
+
+.payment-detail-status.refunded,
+.payment-mini-status.refunded {
+    color: #6b4ca0;
+    background: #f1ebfb;
+}
+
+.payment-detail-status.refunded .status-dot {
+    background: #825db5;
+}
+
+
+/* DEFAULT */
+
+.payment-detail-status.default,
+.payment-mini-status.default {
+    color: #687180;
+    background: #f0f2f4;
+}
+
+.payment-detail-status.default .status-dot {
+    background: #89919d;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.payment-summary {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+
+    align-items: center;
+
+    padding: 28px 35px;
+
+    background: #fafbfc;
+
+    border-bottom: 1px solid #edf0f3;
+}
+
+
+.payment-summary-item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding: 0 20px;
+}
+
+
+.payment-summary-item:first-child {
+    padding-left: 0;
+}
+
+
+.payment-summary-item span {
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #8b93a0;
+}
+
+
+.payment-summary-item strong {
+    font-size: 16px;
+
+    color: #172033;
+}
+
+
+.payment-summary-amount {
+    font-size: 23px !important;
+
+    color: #c89b4a !important;
+}
+
+
+.payment-summary-divider {
+    width: 1px;
+    height: 45px;
+
+    background: #e3e6ea;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.payment-details-section {
+    padding: 35px;
+
+    border-bottom: 1px solid #edf0f3;
+}
+
+
+.payment-section-heading {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+}
+
+
+.payment-section-line {
+    width: 4px;
+    min-width: 4px;
+
+    height: 45px;
+
+    margin-top: 2px;
+
+    border-radius: 5px;
+
+    background: #c89b4a;
+}
+
+
+.payment-section-heading h2 {
+    margin: 0 0 5px;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+
+.payment-section-heading p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #8a929f;
+}
+
+
+/* =========================================================
+   DETAILS GRID
+========================================================= */
+
+.payment-details-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1px;
+
+    background: #e9ecf0;
+
+    border: 1px solid #e9ecf0;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+
+.payment-detail-item {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 20px 22px;
+
+    background: #ffffff;
+}
+
+
+.payment-detail-item.full {
+    grid-column: 1 / -1;
+}
+
+
+.payment-detail-item span {
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #8a929f;
+}
+
+
+.payment-detail-item strong {
+    min-width: 0;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #202938;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.payment-detail-item .payment-amount {
+    color: #c89b4a;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   TRANSACTION ID
+========================================================= */
+
+.transaction-value {
+    font-family: "Courier New", monospace;
+
+    font-size: 14px !important;
+
+    color: #4d5666 !important;
+
+    word-break: break-all;
+}
+
+
+/* =========================================================
+   MINI STATUS
+========================================================= */
+
+.payment-mini-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   FOOTER CARD
+========================================================= */
+
+.payment-details-footer {
+    display: flex;
+    justify-content: flex-start;
+
+    padding: 25px 35px;
+
+    background: #fafbfc;
+}
+
+
+.payment-footer-btn {
+    border: 1px solid #dfe3e8;
+
+    background: #ffffff;
+
+    color: #344054;
+
+    padding: 11px 18px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.payment-footer-btn:hover {
+    background: #172033;
+
+    border-color: #172033;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.payment-details-loading {
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    border: 1px solid #e7e9ed;
+
+    box-shadow:
+        0 10px 35px rgba(25, 35, 55, 0.06);
+}
+
+
+.payment-details-loading h2 {
+    margin: 20px 0 7px;
+
+    font-size: 20px;
+
+    color: #172033;
+}
+
+
+.payment-details-loading p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #8a929f;
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.payment-loader {
+    width: 45px;
+    height: 45px;
+
+    border: 4px solid #e9ebef;
+
+    border-top-color: #c89b4a;
+
+    border-radius: 50%;
+
+    animation: paymentSpin 0.8s linear infinite;
+}
+
+
+@keyframes paymentSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.payment-details-error-card {
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 30px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    border: 1px solid #e7e9ed;
+
+    box-shadow:
+        0 10px 35px rgba(25, 35, 55, 0.06);
+}
+
+
+.payment-error-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    background: #fff0f0;
+
+    color: #d64545;
+
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+.payment-details-error-card h2 {
+    margin: 0 0 10px;
+
+    font-size: 22px;
+
+    color: #172033;
+}
+
+
+.payment-details-error-card p {
+    max-width: 600px;
+
+    margin: 0 0 25px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #7d8592;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .payment-details-main {
+        padding: 35px 18px 55px;
+    }
+
+
+    .payment-details-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .payment-header-id {
+        align-items: flex-start;
+
+        width: 100%;
+    }
+
+
+    .payment-summary {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .payment-summary-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+
+    .payment-summary-item,
+    .payment-summary-item:first-child {
+        padding: 0;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .payment-details-main {
+        padding: 25px 12px 40px;
+    }
+
+
+    .payment-details-header {
+        padding: 0;
+        margin-bottom: 22px;
+    }
+
+
+    .payment-header-content h1 {
+        font-size: 27px;
+    }
+
+
+    .payment-header-content p {
+        font-size: 13px;
+    }
+
+
+    .payment-details-card {
+        border-radius: 13px;
+    }
+
+
+    .payment-card-header {
+        padding: 22px 18px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .payment-detail-status {
+        align-self: flex-start;
+    }
+
+
+    .payment-summary {
+        padding: 22px 18px;
+    }
+
+
+    .payment-details-section {
+        padding: 25px 18px;
+    }
+
+
+    .payment-section-heading h2 {
+        font-size: 17px;
+    }
+
+
+    .payment-section-heading p {
+        font-size: 12px;
+    }
+
+
+    .payment-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .payment-detail-item.full {
+        grid-column: auto;
+    }
+
+
+    .payment-detail-item {
+        padding: 17px;
+    }
+
+
+    .payment-details-footer {
+        padding: 20px 18px;
+    }
+
+
+    .payment-footer-btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .payment-details-main {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+
+    .payment-header-content h1 {
+        font-size: 24px;
+    }
+
+
+    .payment-card-header h2 {
+        font-size: 21px;
+    }
+
+
+    .payment-summary-amount {
+        font-size: 20px !important;
+    }
+
+}

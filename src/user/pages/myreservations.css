@@ -1,0 +1,661 @@
+/* =====================================================
+   MY RESERVATIONS
+===================================================== */
+
+.my-reservations {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 0 50px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.my-reservations > h1,
+.dashboard-header h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #172033;
+}
+
+.my-reservations > p,
+.dashboard-header p {
+    margin: 0 0 30px;
+    color: #777;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error-message {
+    margin: 0;
+    padding: 16px 20px;
+
+    background: #fff4f4;
+    border: 1px solid #f1caca;
+    border-radius: 12px;
+
+    color: #c0392b !important;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   EMPTY RESERVATIONS
+===================================================== */
+
+.my-reservations .dashboard-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 6px 25px rgba(0, 0, 0, 0.05);
+}
+
+.my-reservations .dashboard-card h2 {
+    margin: 0 0 10px;
+
+    color: #172033;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.my-reservations .dashboard-card p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   RESERVATION LIST
+===================================================== */
+
+.reservation-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   RESERVATION CARD
+===================================================== */
+
+.reservation-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+    border-radius: 18px;
+
+    padding: 26px 30px;
+
+    box-shadow:
+        0 7px 25px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.reservation-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #ead9b8;
+
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.09);
+}
+
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
+
+.reservation-card-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 20px;
+}
+
+
+/* =====================================================
+   ROOM TITLE
+===================================================== */
+
+.reservation-card-header h2 {
+    margin: 0 0 6px;
+
+    color: #172033;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.reservation-card-header p {
+    margin: 0;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 90px;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* CONFIRMÉE */
+
+.status-confirmed {
+    background: #edf8f1;
+
+    border: 1px solid #c7e8d2;
+
+    color: #27824a;
+}
+
+
+/* EN ATTENTE */
+
+.status-pending {
+    background: #fff9ed;
+
+    border: 1px solid #ead9b8;
+
+    color: #c89b4a;
+}
+
+
+/* ANNULÉE */
+
+.status-cancelled {
+    background: #fff1f1;
+
+    border: 1px solid #f0caca;
+
+    color: #c0392b;
+}
+
+
+/* =====================================================
+   RESERVATION INFO
+===================================================== */
+
+.reservation-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* =====================================================
+   INFO ITEM
+===================================================== */
+
+.reservation-info-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.reservation-info-item span {
+    color: #888;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+.reservation-info-item strong {
+    color: #172033;
+
+    font-size: 15px;
+
+    font-weight: 650;
+}
+
+
+/* =====================================================
+   PAYMENT
+===================================================== */
+
+.reservation-payment {
+    display: flex;
+
+    align-items: center;
+
+    margin-top: 18px;
+
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    background: #fafafa;
+}
+
+
+/* =====================================================
+   PAYMENT PAID
+===================================================== */
+
+.payment-paid {
+    color: #27824a;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PAYMENT PENDING
+===================================================== */
+
+.payment-pending {
+    color: #c89b4a;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.reservation-actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 18px;
+}
+
+
+/* =====================================================
+   PAYER MAINTENANT
+===================================================== */
+
+.payment-btn {
+    flex: 1;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #c89b4a;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+.payment-btn:hover {
+    background: #b3873d;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(200, 155, 74, 0.28);
+}
+
+.payment-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   DETAILS BUTTON
+===================================================== */
+
+.reservation-actions .details-btn {
+    flex: 1;
+
+    width: auto;
+
+    margin-top: 0;
+
+    padding: 13px 20px;
+
+    border: 1px solid #172033;
+
+    border-radius: 10px;
+
+    background: #172033;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.reservation-actions .details-btn:hover {
+    background: #c89b4a;
+
+    border-color: #c89b4a;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 15px rgba(200, 155, 74, 0.25);
+}
+
+
+/* =====================================================
+   ONLY DETAILS BUTTON
+   Quand paiement déjà effectué
+===================================================== */
+
+.reservation-actions .details-btn:only-child {
+    width: 100%;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.my-reservations > p {
+    color: #777777;
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 1000px) {
+
+    .reservation-card {
+        padding: 28px 32px;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .my-reservations {
+        padding: 10px 0 40px;
+    }
+
+    .reservation-list {
+        gap: 18px;
+    }
+
+    .reservation-card {
+        padding: 23px;
+    }
+
+    .reservation-info {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        row-gap: 18px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .my-reservations {
+        padding: 5px 0 35px;
+    }
+
+
+    .my-reservations > h1,
+    .dashboard-header h1 {
+        font-size: 25px;
+    }
+
+
+    .my-reservations > p,
+    .dashboard-header p {
+        font-size: 14px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .reservation-list {
+        gap: 16px;
+    }
+
+
+    .reservation-card {
+        padding: 20px;
+
+        border-radius: 15px;
+    }
+
+
+    /* HEADER */
+
+    .reservation-card-header {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .reservation-card-header h2 {
+        font-size: 19px;
+    }
+
+
+    .status {
+        align-self: flex-start;
+
+        min-width: auto;
+    }
+
+
+    /* INFO */
+
+    .reservation-info {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 16px;
+
+        padding: 17px 0;
+    }
+
+
+    .reservation-info-item span {
+        font-size: 11px;
+    }
+
+
+    .reservation-info-item strong {
+        font-size: 14px;
+    }
+
+
+    /* PAYMENT */
+
+    .reservation-payment {
+        margin-top: 15px;
+
+        padding: 11px 13px;
+    }
+
+
+    /* BUTTONS */
+
+    .reservation-actions {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .payment-btn,
+    .reservation-actions .details-btn {
+        width: 100%;
+
+        flex: none;
+
+        padding: 12px 16px;
+
+        font-size: 13px;
+    }
+
+
+    /* EMPTY */
+
+    .my-reservations .dashboard-card {
+        padding: 25px 20px;
+
+        border-radius: 14px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .my-reservations > h1,
+    .dashboard-header h1 {
+        font-size: 22px;
+    }
+
+
+    .reservation-card {
+        padding: 17px;
+    }
+
+
+    .reservation-card-header h2 {
+        font-size: 18px;
+    }
+
+
+    .reservation-info {
+        gap: 13px;
+    }
+
+
+    .reservation-info-item span {
+        font-size: 10px;
+    }
+
+
+    .reservation-info-item strong {
+        font-size: 13px;
+    }
+
+
+    .payment-pending,
+    .payment-paid {
+        font-size: 12px;
+    }
+
+}
