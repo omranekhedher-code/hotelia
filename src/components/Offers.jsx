@@ -45,7 +45,7 @@ function Offers() {
       try {
 
         const response = await fetch(
-          "http://localhost:5000/api/rooms"
+          "http://localhost:8080/api/rooms"
         );
 
         if (!response.ok) {

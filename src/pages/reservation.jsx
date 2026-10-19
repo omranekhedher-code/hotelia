@@ -108,7 +108,7 @@ function Reservation() {
 
         const response =
           await fetch(
-            `http://localhost:5000/api/rooms/${id}`
+            `http://localhost:8080/api/rooms/${id}`
           );
 
 
@@ -420,7 +420,7 @@ function Reservation() {
 
       const response =
         await fetch(
-          "http://localhost:5000/api/reservations",
+          "http://localhost:8080/api/reservations",
           {
 
             method: "POST",

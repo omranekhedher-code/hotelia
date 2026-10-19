@@ -8,7 +8,6 @@ import {
 import "./login.css";
 
 function Login() {
-
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -18,29 +17,24 @@ function Login() {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
-
     // =====================================================
     // LOGIN
     // =====================================================
 
     const handleSubmit = async (e) => {
-
         e.preventDefault();
 
         setError("");
         setLoading(true);
 
         try {
-
             const response = await fetch(
-                "http://localhost:5000/api/auth/login",
+                "http://localhost:8080/api/auth/login",
                 {
                     method: "POST",
-
                     headers: {
                         "Content-Type": "application/json"
                     },
-
                     body: JSON.stringify({
                         email,
                         password
@@ -48,11 +42,7 @@ function Login() {
                 }
             );
 
-
-            // =================================================
-            // VÉRIFIER LE TYPE DE RÉPONSE
-            // =================================================
-
+            // Vérifier le type de réponse
             const contentType =
                 response.headers.get("content-type");
 
@@ -62,130 +52,67 @@ function Login() {
                 contentType &&
                 contentType.includes("application/json")
             ) {
-
                 data = await response.json();
-
             } else {
+                const text = await response.text();
 
-                const text =
-                    await response.text();
-
-                console.error(
-                    "Réponse backend :",
-                    text
-                );
+                console.error("Réponse backend :", text);
 
                 throw new Error(
                     "Le serveur a retourné une réponse non JSON."
                 );
             }
 
-
-            console.log(
-                "Login response :",
-                data
-            );
-
+            console.log("Login response :", data);
 
             // =================================================
             // LOGIN ÉCHOUÉ
             // =================================================
 
             if (!response.ok) {
-
                 setError(
                     data.message ||
                     "Email ou mot de passe incorrect."
                 );
-
                 return;
             }
 
-
             // =================================================
-            // VÉRIFIER USER
+            // VÉRIFIER UTILISATEUR
+            // Le backend retourne directement l'objet UserResponse
             // =================================================
 
-            if (!data.user) {
+            const user = data.user ?? data;
 
+            if (
+                !user ||
+                user.id == null ||
+                !user.email
+            ) {
                 setError(
                     "Informations utilisateur manquantes."
                 );
-
                 return;
             }
 
-
             // =================================================
-            // VÉRIFIER TOKEN
-            // =================================================
-
-            if (!data.token) {
-
-                setError(
-                    "Token de connexion manquant."
-                );
-
-                return;
-            }
-
-
-            // =================================================
-            // SAUVEGARDER TOKEN
-            // =================================================
-
-            localStorage.setItem(
-                "token",
-                data.token
-            );
-
-
-            // =================================================
-            // SAUVEGARDER USER
+            // SAUVEGARDER UTILISATEUR
             // =================================================
 
             localStorage.setItem(
                 "user",
-                JSON.stringify(data.user)
+                JSON.stringify(user)
             );
-
 
             // =================================================
             // REDIRECTION
             // =================================================
 
-            /*
-                Si l'utilisateur venait d'une page protégée :
+            const from = location.state?.from;
+            const role = user.role?.toLowerCase();
 
-                /room/5
-                    ↓
-                /login
-                    ↓
-                login réussi
-                    ↓
-                /room/5
-
-                Sinon :
-
-                login direct
-                    ↓
-                /user
-            */
-
-
-            const from =
-                location.state?.from;
-
-
-            // =================================================
-            // ADMIN
-            // =================================================
-
-            if (data.user.role === "admin") {
-
-                console.log(
-                    "Connexion Admin"
-                );
+            if (role === "admin") {
+                console.log("Connexion Admin");
 
                 navigate("/admin", {
                     replace: true
@@ -194,41 +121,22 @@ function Login() {
                 return;
             }
 
-
-            // =================================================
-            // USER
-            // =================================================
-
             if (from) {
-
-                console.log(
-                    "Retour vers :",
-                    from
-                );
+                console.log("Retour vers :", from);
 
                 navigate(from, {
                     replace: true
                 });
-
             } else {
-
-                console.log(
-                    "Connexion User"
-                );
+                console.log("Connexion User");
 
                 navigate("/user", {
                     replace: true
                 });
-
             }
 
-
         } catch (error) {
-
-            console.error(
-                "Erreur login :",
-                error
-            );
+            console.error("Erreur login :", error);
 
             setError(
                 error.message ||
@@ -236,52 +144,32 @@ function Login() {
             );
 
         } finally {
-
             setLoading(false);
-
         }
-
     };
-
 
     // =====================================================
     // PAGE
     // =====================================================
 
     return (
-
         <div className="login-page">
-
             <div className="login-container">
-
                 <div className="login-card">
-
-
-                    {/* =================================================
-                        TITLE
-                    ================================================= */}
 
                     <h1>
                         Bon retour
                     </h1>
 
-
                     <p>
                         Connectez-vous à votre compte
                     </p>
 
-
-                    {/* =================================================
-                        FORM
-                    ================================================= */}
-
                     <form onSubmit={handleSubmit}>
-
 
                         {/* EMAIL */}
 
                         <div className="input-group">
-
                             <label>
                                 Email
                             </label>
@@ -295,14 +183,11 @@ function Login() {
                                 }
                                 required
                             />
-
                         </div>
-
 
                         {/* PASSWORD */}
 
                         <div className="input-group">
-
                             <label>
                                 Mot de passe
                             </label>
@@ -316,83 +201,52 @@ function Login() {
                                 }
                                 required
                             />
-
                         </div>
 
-
-                        {/* =================================================
-                            MOT DE PASSE OUBLIÉ
-                        ================================================= */}
+                        {/* MOT DE PASSE OUBLIÉ */}
 
                         <div className="forgot-password">
-
                             <Link to="/forgot-password">
-
                                 Mot de passe oublié ?
-
                             </Link>
-
                         </div>
 
-
-                        {/* =================================================
-                            ERROR
-                        ================================================= */}
+                        {/* ERROR */}
 
                         {error && (
-
                             <p className="login-error">
                                 {error}
                             </p>
-
                         )}
 
-
-                        {/* =================================================
-                            BUTTON
-                        ================================================= */}
+                        {/* BUTTON */}
 
                         <button
                             type="submit"
                             disabled={loading}
                         >
-
                             {loading
                                 ? "Connexion..."
                                 : "Se connecter"
                             }
-
                         </button>
-
 
                     </form>
 
-
-                    {/* =================================================
-                        SIGNUP
-                    ================================================= */}
+                    {/* SIGNUP */}
 
                     <span>
-
                         Vous n’avez pas encore de compte ?
 
                         <Link to="/signup">
-
                             {" "}S’inscrire
-
                         </Link>
-
                     </span>
 
-
                 </div>
-
             </div>
-
         </div>
-
     );
-
 }
 
 export default Login;

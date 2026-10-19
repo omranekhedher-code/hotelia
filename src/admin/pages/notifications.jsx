@@ -27,7 +27,7 @@ function Notifications() {
             // ==========================================
 
             const reservationsResponse = await fetch(
-                "http://localhost:5000/api/reservations"
+                "http://localhost:8080/api/reservations"
             );
 
             const reservations =
@@ -48,7 +48,7 @@ function Notifications() {
             // ==========================================
 
             const paymentsResponse = await fetch(
-                "http://localhost:5000/api/payments"
+                "http://localhost:8080/api/payments"
             );
 
             const payments =
@@ -69,7 +69,7 @@ function Notifications() {
             // ==========================================
 
             const reviewsResponse = await fetch(
-                "http://localhost:5000/api/reviews"
+                "http://localhost:8080/api/reviews"
             );
 
             const reviews =

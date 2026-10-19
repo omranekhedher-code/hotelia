@@ -80,7 +80,7 @@ function ClientProfile() {
 
         const response = await fetch(
 
-          `http://localhost:5000/api/users/${id}`
+          `http://localhost:8080/api/users/${id}`
 
         );
 
@@ -141,7 +141,7 @@ function ClientProfile() {
         const reservationResponse =
           await fetch(
 
-            `http://localhost:5000/api/reservations/user/${id}`
+            `http://localhost:8080/api/reservations/user/${id}`
 
           );
 
@@ -280,7 +280,7 @@ function ClientProfile() {
 
       const response = await fetch(
 
-        `http://localhost:5000/api/users/${client.id}`,
+        `http://localhost:8080/api/users/${client.id}`,
 
         {
 

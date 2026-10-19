@@ -43,7 +43,7 @@ function Profile() {
         }
 
 
-        fetch(`http://localhost:5000/api/users/${userId}`)
+        fetch(`http://localhost:8080/api/users/${userId}`)
             .then(async (response) => {
 
                 const data = await response.json();
@@ -118,7 +118,7 @@ function Profile() {
 
 
             const response = await fetch(
-                `http://localhost:5000/api/users/${userId}`,
+                `http://localhost:8080/api/users/${userId}`,
                 {
                     method: "PUT",
 

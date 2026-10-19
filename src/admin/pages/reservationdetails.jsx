@@ -26,7 +26,7 @@ function ReservationDetails() {
             setError("");
 
             const response = await fetch(
-                `http://localhost:5000/api/reservations/${id}`
+                `http://localhost:8080/api/reservations/${id}`
             );
 
             const data = await response.json();

@@ -24,7 +24,7 @@ function Payments() {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/payments/user/${userId}`,
+          `http://localhost:8080/api/payments/user/${userId}`,
           {
             method: "GET",
             headers: {

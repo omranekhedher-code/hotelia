@@ -63,7 +63,7 @@ function Rooms() {
 
             const response =
                 await fetch(
-                    "http://localhost:5000/api/rooms"
+                    "http://localhost:8080/api/rooms"
                 );
 
 
@@ -163,7 +163,7 @@ function Rooms() {
             const response =
                 await fetch(
 
-                    `http://localhost:5000/api/rooms/${selectedRoom.id}`,
+                    `http://localhost:8080/api/rooms/${selectedRoom.id}`,
 
                     {
                         method: "DELETE"

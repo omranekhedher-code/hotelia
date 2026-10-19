@@ -60,7 +60,7 @@ function AdminProfile() {
 
                 const response = await fetch(
 
-                    `http://localhost:5000/api/users/${storedUser.id}`
+                    `http://localhost:8080/api/users/${storedUser.id}`
 
                 );
 
@@ -173,7 +173,7 @@ function AdminProfile() {
 
             const response = await fetch(
 
-                `http://localhost:5000/api/users/${admin.id}`,
+                `http://localhost:8080/api/users/${admin.id}`,
 
                 {
 

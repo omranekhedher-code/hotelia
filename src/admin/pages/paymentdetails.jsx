@@ -32,7 +32,7 @@ function PaymentDetails() {
                 setError("");
 
                 const response = await fetch(
-                    `http://localhost:5000/api/payments/${id}`
+                    `http://localhost:8080/api/payments/${id}`
                 );
 
                 const contentType =

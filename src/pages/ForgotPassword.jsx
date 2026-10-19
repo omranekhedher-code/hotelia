@@ -43,7 +43,7 @@ function ForgotPassword() {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/auth/forgot-password",
+                "http://localhost:8080/api/auth/forgot-password",
                 {
                     method: "POST",
 
@@ -138,7 +138,7 @@ function ForgotPassword() {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/auth/verify-otp",
+                "http://localhost:8080/api/auth/verify-otp",
                 {
                     method: "POST",
 
@@ -244,7 +244,7 @@ function ForgotPassword() {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/auth/reset-password",
+                "http://localhost:8080/api/auth/reset-password",
                 {
                     method: "POST",
 

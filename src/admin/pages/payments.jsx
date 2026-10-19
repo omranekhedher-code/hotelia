@@ -36,7 +36,7 @@ function Payments() {
                 setLoading(true);
 
                 const response = await fetch(
-                    "http://localhost:5000/api/payments"
+                    "http://localhost:8080/api/payments"
                 );
 
                 const data = await response.json();
@@ -170,7 +170,7 @@ function Payments() {
 
             const response = await fetch(
 
-                `http://localhost:5000/api/payments/${selectedPayment.id}`,
+                `http://localhost:8080/api/payments/${selectedPayment.id}`,
 
                 {
                     method: "DELETE"

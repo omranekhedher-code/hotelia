@@ -64,7 +64,7 @@ function Navbar() {
 
             const reservationsResponse =
                 await fetch(
-                    "http://localhost:5000/api/reservations"
+                    "http://localhost:8080/api/reservations"
                 );
 
             if (!reservationsResponse.ok) {
@@ -83,7 +83,7 @@ function Navbar() {
 
             const paymentsResponse =
                 await fetch(
-                    "http://localhost:5000/api/payments"
+                    "http://localhost:8080/api/payments"
                 );
 
             if (!paymentsResponse.ok) {
@@ -102,7 +102,7 @@ function Navbar() {
 
             const reviewsResponse =
                 await fetch(
-                    "http://localhost:5000/api/reviews"
+                    "http://localhost:8080/api/reviews"
                 );
 
             if (!reviewsResponse.ok) {

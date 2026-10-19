@@ -52,7 +52,7 @@ function PromotionDetails() {
 
 
                 const response = await fetch(
-                    `http://localhost:5000/api/promotions/${id}`
+                    `http://localhost:8080/api/promotions/${id}`
                 );
 
 
@@ -482,7 +482,7 @@ function PromotionDetails() {
             // ---------------------------------------------
 
             const response = await fetch(
-                `http://localhost:5000/api/promotions/${id}`,
+                `http://localhost:8080/api/promotions/${id}`,
                 {
                     method: "PUT",
 

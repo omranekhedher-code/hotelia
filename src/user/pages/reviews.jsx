@@ -45,7 +45,7 @@ function Reviews() {
                     await Promise.all([
 
                         fetch(
-                            `http://localhost:5000/api/reservations/user/${userId}`,
+                            `http://localhost:8080/api/reservations/user/${userId}`,
                             {
                                 headers: {
                                     Authorization: `Bearer ${token}`
@@ -54,7 +54,7 @@ function Reviews() {
                         ),
 
                         fetch(
-                            `http://localhost:5000/api/reviews/user/${userId}`,
+                            `http://localhost:8080/api/reviews/user/${userId}`,
                             {
                                 headers: {
                                     Authorization: `Bearer ${token}`
@@ -195,7 +195,7 @@ function Reviews() {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/reviews",
+                "http://localhost:8080/api/reviews",
                 {
                     method: "POST",
 

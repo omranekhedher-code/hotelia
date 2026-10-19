@@ -36,7 +36,7 @@ function PromotionForm({ onPromotionAdded }) {
             try {
 
                 const response = await fetch(
-                    "http://localhost:5000/api/rooms"
+                    "http://localhost:8080/api/rooms"
                 );
 
 
@@ -188,7 +188,7 @@ function PromotionForm({ onPromotionAdded }) {
 
             const response = await fetch(
 
-                "http://localhost:5000/api/promotions",
+                "http://localhost:8080/api/promotions",
 
                 {
 

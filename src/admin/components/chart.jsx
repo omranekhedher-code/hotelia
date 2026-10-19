@@ -34,7 +34,7 @@ function Chart() {
             try {
 
                 const response = await fetch(
-                    "http://localhost:5000/api/reservations"
+                    "http://localhost:8080/api/reservations"
                 );
 
 

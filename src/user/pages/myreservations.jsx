@@ -37,7 +37,7 @@ function MyReservations() {
         setError("");
 
         const response = await fetch(
-          `http://localhost:5000/api/reservations/user/${userId}`,
+          `http://localhost:8080/api/reservations/user/${userId}`,
           {
             method: "GET",
             headers: {

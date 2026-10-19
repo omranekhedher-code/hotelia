@@ -87,7 +87,7 @@ function Dashboard() {
 
         const reservationsResponse =
           await fetch(
-            `http://localhost:5000/api/reservations/user/${userId}`,
+            `http://localhost:8080/api/reservations/user/${userId}`,
             {
               method: "GET",
 
@@ -133,7 +133,7 @@ function Dashboard() {
 
         const paymentsResponse =
           await fetch(
-            `http://localhost:5000/api/payments/user/${userId}`,
+            `http://localhost:8080/api/payments/user/${userId}`,
             {
               method: "GET",
 

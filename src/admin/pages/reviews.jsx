@@ -38,7 +38,7 @@ function Reviews() {
                 setError("");
 
                 const response = await fetch(
-                    "http://localhost:5000/api/reviews"
+                    "http://localhost:8080/api/reviews"
                 );
 
                 const contentType =
@@ -121,7 +121,7 @@ function Reviews() {
             setDeletingId(id);
 
             const response = await fetch(
-                `http://localhost:5000/api/reviews/${id}`,
+                `http://localhost:8080/api/reviews/${id}`,
                 {
                     method: "DELETE"
                 }

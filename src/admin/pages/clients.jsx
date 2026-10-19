@@ -35,7 +35,7 @@ function Clients() {
                 setLoading(true);
 
                 const response = await fetch(
-                    "http://localhost:5000/api/users"
+                    "http://localhost:8080/api/users"
                 );
 
                 const users = await response.json();
@@ -68,7 +68,7 @@ function Clients() {
 
                                     const reservationResponse =
                                         await fetch(
-                                            `http://localhost:5000/api/reservations/user/${user.id}`
+                                            `http://localhost:8080/api/reservations/user/${user.id}`
                                         );
 
 
@@ -213,7 +213,7 @@ function Clients() {
 
             const response = await fetch(
 
-                `http://localhost:5000/api/users/${selectedClient.id}`,
+                `http://localhost:/api/users/${selectedClient.id}`,
 
                 {
                     method: "DELETE"

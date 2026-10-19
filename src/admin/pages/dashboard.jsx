@@ -8,7 +8,7 @@ import Chart from "../components/chart";
 
 import Rooms from "./Rooms";
 import Reservations from "./Reservations";
-import Clients from "./Clients";
+import Clients from "./clients";
 import Payments from "./Payments";
 import Promotions from "./Promotions";
 import Reviews from "./reviews";
@@ -70,7 +70,7 @@ function Dashboard() {
 
                 const roomsResponse =
                     await fetch(
-                        "http://localhost:5000/api/rooms"
+                        "http://localhost:8080/api/rooms"
                     );
 
 
@@ -93,7 +93,7 @@ function Dashboard() {
 
                 const reservationsResponse =
                     await fetch(
-                        "http://localhost:5000/api/reservations"
+                        "http://localhost:8080/api/reservations"
                     );
 
 
@@ -116,7 +116,7 @@ function Dashboard() {
 
                 const usersResponse =
                     await fetch(
-                        "http://localhost:5000/api/users"
+                        "http://localhost:8080/api/users"
                     );
 
 
@@ -139,7 +139,7 @@ function Dashboard() {
 
                 const paymentsResponse =
                     await fetch(
-                        "http://localhost:5000/api/payments"
+                        "http://localhost:8080/api/payments"
                     );
 
 
